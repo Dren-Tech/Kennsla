@@ -1,0 +1,20 @@
+{
+  "name": "kennsla",
+  "version": "0.0.1",
+  "description": "Monorepo for the Kennsla project",
+  "workspaces": [
+    "api",
+    "frontend"
+  ],
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dren-Tech/Kennsla.git"
+  },
+  "author": "Marian Hahne",
+  "license": "AGPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/Dren-Tech/Kennsla/issues"
+  },
+  "homepage": "https://github.com/Dren-Tech/Kennsla#readme"
+}
