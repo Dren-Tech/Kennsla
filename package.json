@@ -1,20 +1,38 @@
 {
   "name": "kennsla",
   "version": "0.0.1",
-  "description": "Monorepo for the Kennsla project",
+  "description": "Monorepo for the Kennsla project.",
+  "contributors": [
+    "Marian Hahne"
+  ],
   "workspaces": [
     "api",
     "frontend"
   ],
+  "author": "Marian Hahne",
+  "private": false,
+  "main": "./api/app.ts",
+  "types": "./api/lib/main.d.ts",
+  "bugs": {
+    "url": "https://github.com/Dren-Tech/Kennsla/issues"
+  },
+  "homepage": "https://github.com/Dren-Tech/Kennsla#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "7.32.0",
+    "eslint-config-es": "3.30.15",
+    "roboter": "12.3.0",
+    "typescript": "4.4.3"
+  },
   "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Dren-Tech/Kennsla.git"
   },
-  "author": "Marian Hahne",
-  "license": "AGPL-3.0-or-later",
-  "bugs": {
-    "url": "https://github.com/Dren-Tech/Kennsla/issues"
-  },
-  "homepage": "https://github.com/Dren-Tech/Kennsla#readme"
+  "keywords": [
+    "kennsla",
+    "education",
+    "cms"
+  ],
+  "license": "AGPL-3.0-or-later"
 }
