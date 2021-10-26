@@ -1,7 +1,3 @@
 {
-    "extends": "es/node",
-
-    "rules": {
-        "new-cap": ["error", { "capIsNew": false }]
-    }
+    "extends": "../.eslintrc.json"
 }

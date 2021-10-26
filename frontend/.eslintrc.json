@@ -1,0 +1,15 @@
+{
+    "plugins": [
+        "react-hooks",
+        "styled-components-a11y"
+    ],
+    "extends": [
+        "../.eslintrc.json",
+        "plugin:react/jsx-runtime",
+        "plugin:react-hooks/recommended",
+        "plugin:styled-components-a11y/recommended"
+    ],
+    "ignorePatterns": [
+        "*.config.js"
+    ]
+}
