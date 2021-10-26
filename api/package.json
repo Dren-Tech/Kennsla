@@ -39,7 +39,7 @@
     "ts-node": "10.2.1"
   },
   "scripts": {
-    "dev": "npx nodemon src/server.ts",
+    "dev": "npx nodemon app.ts",
     "start": "npx ts-node app.ts",
     "test": "npx mocha --recursive --require ts-node/register --extension ts --parallel"
   },
