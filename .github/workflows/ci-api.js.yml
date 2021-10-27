@@ -33,6 +33,12 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm ci
+      name: Install Node dependencies in root folder
+      
+    - run: npm ci
+      name: Install Node dependencies in api folder
       working-directory: api
+      
     - run: npx roboter
+      name: Run Roboter to test and verify code
       working-directory: api
