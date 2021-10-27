@@ -22,7 +22,7 @@
     "graphql": "15.5.1",
     "pg": "8.7.1",
     "reflect-metadata": "0.1.13",
-    "typeorm": "0.2.37"
+    "typeorm": "0.2.38"
   },
   "devDependencies": {
     "@types/eslint": "7.28.2",
