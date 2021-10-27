@@ -4,7 +4,7 @@ import '../styles/globals.css';
 import 'tailwindcss/tailwind.css';
 
 const MyApp = function ({ Component, pageProps }: AppProps): React.ReactElement {
-  return <Component {...pageProps} />;
+  return <Component { ...pageProps } />;
 };
 
 export default MyApp;
