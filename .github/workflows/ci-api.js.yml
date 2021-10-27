@@ -8,10 +8,12 @@ on:
     branches: [ main ]
     paths:
       - "api/**"
+      - ".github/workflows/**"
   pull_request:
     branches: [ main ]
     paths:
       - "api/**"
+      - ".github/workflows/**"
 
 jobs:
   build:
