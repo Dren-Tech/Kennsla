@@ -1,9 +1,13 @@
 <script>
 export default {
-  layout: 'backend',
-}
+  layout: "backend",
+};
 </script>
 
 <template>
-  <Title>Kennsla Backend</Title>
+  <div>
+    <Title>Kennsla Backend</Title>
+    <Headline>Dashboard</Headline>
+    <Subline>View all data</Subline>
+  </div>
 </template>
