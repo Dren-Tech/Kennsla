@@ -5,5 +5,5 @@ export default {
 </script>
 
 <template>
-  <h1>Kennsla Backend</h1>
+  <Title>Kennsla Backend</Title>
 </template>

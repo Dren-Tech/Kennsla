@@ -1,3 +1,9 @@
 export default {
-  buildModules: ['@nuxtjs/tailwindcss']
+  buildModules: ['@nuxtjs/tailwindcss'],
+  components: {
+    dirs: [
+      '~/components',
+      '~/components/basics'
+    ]
+  }
 }
