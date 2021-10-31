@@ -1,6 +1,12 @@
 module.exports = {
     mode: 'jit',
-    purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
+    purge: [
+        './components/**/*.{vue,js}',
+        './layouts/**/*.vue',
+        './pages/**/*.vue',
+        './plugins/**/*.{js,ts}',
+        './nuxt.config.{js,ts}',
+    ],
     darkMode: false, // or 'media' or 'class'
     theme: {
         extend: {},
