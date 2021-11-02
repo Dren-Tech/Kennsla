@@ -1,0 +1,6 @@
+[
+    {
+        "from": "/backend",
+        "to": "/backend/dashboard"
+    }
+]
