@@ -1,11 +1,39 @@
 {
-  "private": true,
+  "name": "frontend",
+  "version": "0.0.1",
+  "description": "The frontend of Kennsla.",
+  "contributors": [
+    "Marian Hahne"
+  ],
+  "author": "Marian Hahne",
+  "private": false,
+  "main": "app.vue",
+  "types": "./.nuxt/nuxt.d.ts",
+  "bin": {
+    "kennsla-frontend": ".nxut/dist/server/server.mjs"
+  },
+  "engines": {
+    "node": ">=14.16.0"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "nuxt3": "3.0.0-27264162.bd65436",
+    "roboter": "12.2.0"
+  },
   "scripts": {
-    "dev": "nuxi dev",
     "build": "nuxi build",
+    "dev": "nuxi dev",
     "start": "node .output/server/index.mjs"
   },
-  "devDependencies": {
-    "nuxt3": "latest"
-  }
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dren-Tech/Kennsla.git"
+  },
+  "keywords": [
+    "frontend",
+    "kennsla",
+    "education",
+    "cms"
+  ],
+  "license": "AGPL-3.0-or-later"
 }
