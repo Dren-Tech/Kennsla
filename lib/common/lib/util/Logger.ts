@@ -1,7 +1,7 @@
 import { flaschenpost, Logger } from 'flaschenpost';
 
 function getLogger(): Logger {
-    return flaschenpost.getLogger();
+  return flaschenpost.getLogger();
 }
 
 export { getLogger }

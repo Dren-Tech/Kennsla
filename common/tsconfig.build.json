@@ -10,15 +10,14 @@
             "esnext",
             "dom"
         ],
-        "outDir": "./dist",
+        "outDir": "./build",
         "module": "commonjs",
         "resolveJsonModule": true,
         "strict": true,
-        "target": "es2019",
-        "composite": true
+        "target": "es2019"
     },
     "exclude": [
         "node_modules",
-        "dist"
+        "build"
     ]
 }

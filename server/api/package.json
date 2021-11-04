@@ -7,8 +7,8 @@
     ],
     "author": "Marian Hahne",
     "private": false,
-    "main": "index.js",
-    "types": "./lib/main.d.ts",
+    "main": "./build/server.js",
+    "types": "./build/main.d.ts",
     "bin": {
         "kennsla-api": "build/server.js"
     },
@@ -22,7 +22,8 @@
         "graphql": "15.7.2",
         "pg": "8.7.1",
         "reflect-metadata": "0.1.13",
-        "typeorm": "0.2.38"
+        "typeorm": "0.2.38",
+        "@kennsla/common": "*"
     },
     "devDependencies": {
         "@types/eslint": "7.28.2",
@@ -39,8 +40,8 @@
         "ts-node": "10.4.0"
     },
     "scripts": {
-        "dev": "npx nodemon app.ts",
-        "start": "npx ts-node app.ts",
+        "dev": "npx nodemon src/server.ts",
+        "start": "npx ts-node src/server.ts",
         "test": "npx mocha --recursive --require ts-node/register --extension ts --parallel",
         "build": "tsc"
     },
