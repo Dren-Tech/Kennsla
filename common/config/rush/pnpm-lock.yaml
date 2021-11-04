@@ -5,6 +5,7 @@ specifiers:
   '@rush-temp/common': file:./projects/common.tgz
   '@types/eslint': 7.28.2
   '@types/express': 4.17.13
+  '@types/mocha': 9.0.0
   '@types/node': 16.11.6
   '@types/supertest': 2.0.11
   assertthat: 6.3.13
@@ -25,9 +26,10 @@ specifiers:
 
 dependencies:
   '@rush-temp/api': file:projects/api.tgz_typescript@4.4.3
-  '@rush-temp/common': file:projects/common.tgz_@types+node@16.11.6
+  '@rush-temp/common': file:projects/common.tgz
   '@types/eslint': 7.28.2
   '@types/express': 4.17.13
+  '@types/mocha': 9.0.0
   '@types/node': 16.11.6
   '@types/supertest': 2.0.11
   assertthat: 6.3.13
@@ -5753,13 +5755,14 @@ packages:
     dev: false
 
   file:projects/api.tgz_typescript@4.4.3:
-    resolution: {integrity: sha512-VYFD/GbEtdIZwS95Ei1JrPrfaLaKS4LoTs0eRcbHnppokOxGWleYUKVqTLSl08l48sCwt0JZGX7/KODCmz9aZQ==, tarball: file:projects/api.tgz}
+    resolution: {integrity: sha512-ZEGxTRpDhd2eFfamZRx+ifgjrXoiqv0T9kMeQhMPLaqe7v4gwyKXtTH/ahKvmfXT7h7cLemIDY1eSQr+nImt5g==, tarball: file:projects/api.tgz}
     id: file:projects/api.tgz
     name: '@rush-temp/api'
     version: 0.0.0
     dependencies:
       '@types/eslint': 7.28.2
       '@types/express': 4.17.13
+      '@types/mocha': 9.0.0
       '@types/node': 16.11.6
       '@types/supertest': 2.0.11
       assertthat: 6.3.13
@@ -5798,18 +5801,25 @@ packages:
       - typescript
     dev: false
 
-  file:projects/common.tgz_@types+node@16.11.6:
-    resolution: {integrity: sha512-fGqp2Tlpen17lhKZu3F0yxMfm5YUXNxuc/vS9Hppeob1BgW5cwMauOBgFBHbt9yDJCUPsTncKVjROq+XoM6CJg==, tarball: file:projects/common.tgz}
-    id: file:projects/common.tgz
+  file:projects/common.tgz:
+    resolution: {integrity: sha512-r4BQ/L/vkqAeggCa8ac9BHvCkwLu+fAtFgElV3/6hu8gT5NTjA60owktbnY4WdusZrkdiOSLEbcZ7EnbBEzKXQ==, tarball: file:projects/common.tgz}
     name: '@rush-temp/common'
     version: 0.0.0
     dependencies:
+      '@types/mocha': 9.0.0
+      '@types/node': 16.11.6
+      '@types/supertest': 2.0.11
+      assertthat: 6.3.13
+      eslint: 7.32.0
+      eslint-config-es: 3.31.0_eslint@7.32.0+typescript@4.4.3
       flaschenpost: 5.0.49
+      mocha: 9.1.3
       roboter: 12.5.0_@types+node@16.11.6
+      supertest: 6.1.6
+      ts-node: 10.4.0_f87a97460d458b5d7fd169f93b5c2f08
       typescript: 4.4.3
     transitivePeerDependencies:
       - '@swc/core'
       - '@swc/wasm'
-      - '@types/node'
       - supports-color
     dev: false

@@ -10,6 +10,10 @@
             "esnext",
             "dom"
         ],
+        "types": [
+            "mocha",
+            "node"
+        ],
         "outDir": "./build",
         "module": "commonjs",
         "resolveJsonModule": true,
