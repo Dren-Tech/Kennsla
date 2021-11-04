@@ -13,12 +13,16 @@
         "url": "https://github.com/Dren-Tech/Kennsla/issues"
     },
     "homepage": "https://github.com/Dren-Tech/Kennsla#readme",
-    "dependencies": {},
+    "dependencies": {
+        "flaschenpost": "5.0.49"
+    },
     "devDependencies": {
         "roboter": "12.3.0",
         "typescript": "4.4.3"
     },
-    "scripts": {},
+    "scripts": {
+        "build": "tsc"
+    },
     "repository": {
         "type": "git",
         "url": "git+https://github.com/Dren-Tech/Kennsla.git"

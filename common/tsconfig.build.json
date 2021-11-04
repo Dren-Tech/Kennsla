@@ -1,0 +1,24 @@
+{
+    "compilerOptions": {
+        "incremental": true,
+        "declaration": true,
+        "declarationMap": true,
+        "experimentalDecorators": true,
+        "esModuleInterop": true,
+        "importHelpers": true,
+        "lib": [
+            "esnext",
+            "dom"
+        ],
+        "outDir": "./dist",
+        "module": "commonjs",
+        "resolveJsonModule": true,
+        "strict": true,
+        "target": "es2019",
+        "composite": true
+    },
+    "exclude": [
+        "node_modules",
+        "dist"
+    ]
+}
