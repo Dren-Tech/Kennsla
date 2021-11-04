@@ -363,6 +363,10 @@
         {
             "packageName": "@kennsla/common",
             "projectFolder": "lib/common"
+        },
+        {
+            "packageName": "@kennsla/api",
+            "projectFolder": "server/api"
         }
         // {
         //   /**

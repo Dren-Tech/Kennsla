@@ -1,0 +1,58 @@
+{
+    "name": "@kennsla/api",
+    "version": "0.0.1",
+    "description": "The API of Kennsla.",
+    "contributors": [
+        "Marian Hahne"
+    ],
+    "author": "Marian Hahne",
+    "private": false,
+    "main": "index.js",
+    "types": "./lib/main.d.ts",
+    "bin": {
+        "kennsla-api": "build/server.js"
+    },
+    "engines": {
+        "node": ">=14.16.0"
+    },
+    "dependencies": {
+        "express": "4.17.1",
+        "express-graphql": "0.12.0",
+        "flaschenpost": "5.0.49",
+        "graphql": "15.7.2",
+        "pg": "8.7.1",
+        "reflect-metadata": "0.1.13",
+        "typeorm": "0.2.38"
+    },
+    "devDependencies": {
+        "@types/eslint": "7.28.2",
+        "@types/express": "4.17.13",
+        "@types/node": "16.11.6",
+        "@types/supertest": "2.0.11",
+        "assertthat": "6.3.13",
+        "eslint": "7.32.0",
+        "eslint-config-es": "3.31.0",
+        "mocha": "9.1.3",
+        "nodemon": "2.0.14",
+        "roboter": "12.1.0",
+        "supertest": "6.1.6",
+        "ts-node": "10.4.0"
+    },
+    "scripts": {
+        "dev": "npx nodemon app.ts",
+        "start": "npx ts-node app.ts",
+        "test": "npx mocha --recursive --require ts-node/register --extension ts --parallel",
+        "build": "tsc"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Dren-Tech/Kennsla.git"
+    },
+    "keywords": [
+        "api",
+        "kennsla",
+        "education",
+        "cms"
+    ],
+    "license": "AGPL-3.0-or-later"
+}
