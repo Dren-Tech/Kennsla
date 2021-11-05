@@ -1,3 +1,6 @@
 {
-    "extends": "../.eslintrc.json"
+    "extends": "es/node",
+    "rules": {
+        "sort-imports": 1
+    }
 }

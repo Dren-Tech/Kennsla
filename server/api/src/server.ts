@@ -1,8 +1,8 @@
-import { buildSchema } from 'graphql';
 import express from 'express';
+import { buildSchema } from 'graphql';
 import { graphqlHTTP } from 'express-graphql';
-import { flaschenpost, getMiddleware } from 'flaschenpost';
 import { getLogger } from '@kennsla/common';
+import { getMiddleware } from 'flaschenpost';
 
 type Status = 'running' | 'starting' | 'rebooting';
 
@@ -46,9 +46,7 @@ const schema = buildSchema(`
 
 // The root provides a resolver function for each API endpoint
 const root = {
-  hello(): string {
-    return 'Hello world!';
-  }
+  hello: 'Hello world!'
 };
 
 app.use('/graphql', graphqlHTTP({

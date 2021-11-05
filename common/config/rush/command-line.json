@@ -16,6 +16,13 @@
             "summary": "Run tests for each repository",
             "description": "Run test script of npm in each repository of monorepo.",
             "enableParallelism": true
+        },
+        {
+            "commandKind": "bulk",
+            "name": "analyze",
+            "summary": "Run analyze for each repository",
+            "description": "Analyze the project, e.g. check dependencies or licenses.",
+            "enableParallelism": true
         }
         // {
         //   /**

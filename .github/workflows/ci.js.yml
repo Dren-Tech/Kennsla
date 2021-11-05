@@ -31,5 +31,8 @@ jobs:
             - run: node common/scripts/install-run-rush.js rebuild --verbose
               name: Build dependencies
 
+            - run: node common/scripts/install-run-rush.js analyze
+              name: Analyze dependencies
+
             - run: node common/scripts/install-run-rush.js test
               name: Test projects

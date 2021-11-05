@@ -5802,10 +5802,11 @@ packages:
     dev: false
 
   file:projects/common.tgz:
-    resolution: {integrity: sha512-r4BQ/L/vkqAeggCa8ac9BHvCkwLu+fAtFgElV3/6hu8gT5NTjA60owktbnY4WdusZrkdiOSLEbcZ7EnbBEzKXQ==, tarball: file:projects/common.tgz}
+    resolution: {integrity: sha512-DtQ49EZzaAEQ3jSJJKX2rbcwSgGnU02R9bLdRvDhocUzkqGXaqFEL8XyyjUPK/9M8XQSqE1xFY/W4mh+tcjaSg==, tarball: file:projects/common.tgz}
     name: '@rush-temp/common'
     version: 0.0.0
     dependencies:
+      '@types/eslint': 7.28.2
       '@types/mocha': 9.0.0
       '@types/node': 16.11.6
       '@types/supertest': 2.0.11
