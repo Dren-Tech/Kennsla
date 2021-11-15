@@ -19,7 +19,7 @@
   "homepage": "https://github.com/Dren-Tech/Kennsla#readme",
   "dependencies": {},
   "devDependencies": {
-    "concurrently": "^6.3.0",
+    "concurrently": "^6.4.0",
     "eslint": "7.32.0",
     "eslint-config-es": "3.31.0",
     "roboter": "12.3.0",
