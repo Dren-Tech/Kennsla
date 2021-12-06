@@ -20,7 +20,7 @@
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "4.2.1",
-    "@types/eslint": "7.28.2",
+    "@types/eslint": "8.2.1",
     "@types/node": "16.11.6",
     "@types/supertest": "2.0.11",
     "@typescript-eslint/eslint-plugin": "5.2.0",
