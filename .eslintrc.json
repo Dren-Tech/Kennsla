@@ -1,8 +1,0 @@
-{
-    "root": true,
-    "extends": "es/node",
-
-    "rules": {
-        "new-cap": ["error", { "capIsNew": false }]
-    }
-}
