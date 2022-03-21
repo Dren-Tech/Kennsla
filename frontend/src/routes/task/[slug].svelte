@@ -1,10 +1,10 @@
 <script>
+	import Headline from '../../components/blocks/Headline.svelte';
 </script>
 
 <div class="task">
-	<div class="block headline">
-		<h1>Aufgabe 1</h1>
-	</div>
+	<Headline text="Aufgabe 1" />
+
 	<div class="block formatted-content">
 		<p>
 			Consectetur exercitation voluptate laborum voluptate. Qui magna laborum deserunt do consequat
