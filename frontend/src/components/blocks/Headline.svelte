@@ -1,5 +1,5 @@
 <script lang="ts">
-	let text: string = 'Text';
+	export let text: string = 'Text';
 </script>
 
 <div class="block headline">
