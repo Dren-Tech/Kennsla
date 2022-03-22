@@ -1,5 +1,9 @@
 <script>
 	import Headline from '../../components/blocks/Headline.svelte';
+
+	export let task;
+
+	console.log(task);
 </script>
 
 <div class="task">
@@ -12,16 +16,12 @@
 			incididunt do. Incididunt labore excepteur consequat sit aliquip labore ullamco consequat et
 			officia aute tempor. Laborum minim consectetur eu labore cupidatat laborum cillum irure labore
 			do laborum reprehenderit. Ullamco est id quis excepteur enim officia et ad veniam cillum
-			eiusmod excepteur magna deserunt. Deserunt incididunt veniam incididunt velit nulla.
-		</p>
-		<p>
-			Cupidatat qui quis nisi proident sunt consectetur sunt amet fugiat eiusmod sint proident.
-			Veniam non sunt id est ullamco ad fugiat laboris pariatur incididunt ad. Ut occaecat nulla
-			nostrud aliqua exercitation Lorem adipisicing amet proident culpa esse.
-		</p>
-		<p>
-			Aliqua eu deserunt id sunt anim nisi officia Lorem irure ex. Consequat id amet velit elit
-			reprehenderit. Ut qui fugiat dolor pariatur ipsum deserunt cillum.
+			eiusmod excepteur magna deserunt. Deserunt incididunt veniam incididunt velit nulla. Cupidatat
+			qui quis nisi proident sunt consectetur sunt amet fugiat eiusmod sint proident. Veniam non
+			sunt id est ullamco ad fugiat laboris pariatur incididunt ad. Ut occaecat nulla nostrud aliqua
+			exercitation Lorem adipisicing amet proident culpa esse. Aliqua eu deserunt id sunt anim nisi
+			officia Lorem irure ex. Consequat id amet velit elit reprehenderit. Ut qui fugiat dolor
+			pariatur ipsum deserunt cillum.
 		</p>
 	</div>
 

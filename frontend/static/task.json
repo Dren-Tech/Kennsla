@@ -1,0 +1,21 @@
+{
+	"id": 123,
+	"slug": "test-task",
+	"blocks": [
+		{
+			"id": 213123,
+			"type": "headline",
+			"payload": {
+				"headlineType": "h1",
+				"value": "Aufgabe Nr. 1"
+			}
+		},
+		{
+			"id": 893,
+			"type": "formatted-content",
+			"payload": {
+				"value": "Consectetur *exercitation* voluptate laborum voluptate. Qui magna laborum deserunt do consequat\nirure anim enim cupidatat aliqua officia non **tempor** proident. Sit aliquip eiusmod fugiat\nincididunt do. Incididunt labore excepteur consequat sit aliquip labore ullamco consequat et officia aute tempor.\n###Headline 3\nLaborum minim consectetur eu labore cupidatat laborum cillum irure labore\ndo laborum reprehenderit."
+			}
+		}
+	]
+}
