@@ -1,0 +1,5 @@
+{
+  "todo.workspace-ignore-paths" : [
+    "\/Users\/marian\/Code\/Kennsla\/Kennsla\/frontend\/.svelte-kit\/runtime\/server"
+  ]
+}

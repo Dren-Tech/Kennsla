@@ -1,0 +1,13 @@
+.formatted-content p {
+	@apply my-1;
+}
+
+.formatted-content h1 {
+	@apply text-2xl font-semibold;
+}
+.formatted-content h2 {
+	@apply text-xl font-semibold;
+}
+.formatted-content h3 {
+	@apply text-lg font-medium;
+}
