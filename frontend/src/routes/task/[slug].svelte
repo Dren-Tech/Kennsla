@@ -1,7 +1,8 @@
-<script>
+<script lang="ts">
 	import Headline from '../../components/blocks/Headline.svelte';
+	import type Task from '../../domain/model/Task';
 
-	export let task;
+	export let task: Task;
 
 	console.log(task);
 </script>
