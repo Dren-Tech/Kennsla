@@ -8,7 +8,11 @@
 </script>
 
 <div class="task">
-	<Headline text="Aufgabe 1" />
+	{#each task.blocks as block}
+		{#if block.type == 'headline'}
+			<Headline text={block.payload.value} headlineType={block.payload.headlineType} />
+		{/if}
+	{/each}
 
 	<div class="block formatted-content">
 		<p>
