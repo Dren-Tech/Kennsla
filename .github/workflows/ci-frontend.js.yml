@@ -32,13 +32,11 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: npm ci
-      name: Install Node dependencies in root folder
       
     - run: npm ci
       name: Install Node dependencies in frontend folder
       working-directory: frontend
       
-    - run: npx roboter
-      name: Run Roboter to test and verify code
+    - run: npm run build
+      name: Build SvelteKit
       working-directory: frontend
