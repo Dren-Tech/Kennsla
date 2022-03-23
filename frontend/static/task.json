@@ -16,6 +16,22 @@
 			"payload": {
 				"value": "Consectetur *exercitation* voluptate laborum voluptate. Qui magna laborum deserunt do consequat\nirure anim enim cupidatat aliqua officia non **tempor** proident. Sit aliquip eiusmod fugiat\nincididunt do. Incididunt labore excepteur consequat sit aliquip labore ullamco consequat et officia aute tempor.\n### Headline 3\nLaborum minim consectetur eu labore cupidatat laborum cillum irure labore\n\ndo laborum reprehenderit."
 			}
+		},
+		{
+			"id": 92,
+			"type": "hint",
+			"payload": {
+				"title": "Hinweis Nr. 1",
+				"text": "Proident amet non Lorem proident ullamco ea proident consequat ea voluptate exercitation."
+			}
+		},
+		{
+			"id": 93,
+			"type": "hint",
+			"payload": {
+				"title": "Hinweis Nr. 2",
+				"text": "Deserunt incididunt dolor exercitation irure amet. Labore consequat eiusmod sint commodo elit dolor proident ut est ullamco aliqua ad."
+			}
 		}
 	]
 }
