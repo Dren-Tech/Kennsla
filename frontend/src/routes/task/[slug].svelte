@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Headline, FormattedContent, Hint } from '../../components/blocks/Blocks';
+	import { Headline, FormattedContent, Hint, Question } from '../../components/blocks/Blocks';
 	import type Task from '../../domain/model/Task';
 
 	export let task: Task;
@@ -15,14 +15,11 @@
 			<FormattedContent text={block.payload.value} />
 		{:else if block.type == 'hint'}
 			<Hint title={block.payload.title} text={block.payload.text} />
+		{:else if block.type == 'question'}
+			<Question
+				submitButtonText={block.payload.submitButtonText}
+				questions={block.payload.questions}
+			/>
 		{/if}
 	{/each}
-
-	<div class="block question">
-		<div>Dies ist eine Frage. Wie ist die Antwort auf die Frage?</div>
-		<div>
-			<input type="text" />
-			<button>Absenden</button>
-		</div>
-	</div>
 </div>
