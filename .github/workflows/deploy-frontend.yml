@@ -13,8 +13,12 @@ on:
       - complete
 
 jobs:
-  deploy:
+  deployment:
+    if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
+    environment: 
+      name: Production
+      url: https://kennsla-frontend.netlify.app
     steps:
       - uses: actions/checkout@v2
       - name: Use Node.js 16.x
