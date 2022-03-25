@@ -9,16 +9,12 @@ on:
 
 jobs:
   test:
-    name: Test Code
-    uses: Dren-Tech/Kennsla/.github/workflows/development-frontend.yml@test
+    name: Test and check Code
+    uses: Dren-Tech/Kennsla/.github/workflows/development-frontend.yml@main
 
-  check:
-    name: Check Code
-    uses: Dren-Tech/Kennsla/.github/workflows/development-frontend.yml@check
-    
   deployment:
     name: Deploy Frontend
-    needs: ['test', 'check']
+    needs: ['test']
     runs-on: ubuntu-latest
     environment: 
       name: Production
