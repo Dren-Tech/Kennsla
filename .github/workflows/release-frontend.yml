@@ -36,9 +36,9 @@ jobs:
         id: diagram
         uses: githubocto/repo-visualizer@0.7.1
         with:
-          excluded_paths: "node_modules,build,.storybook,.netlify,.github,npm-shrinkwrap.json"
+          excluded_paths: "node_modules,build,.storybook,.netlify,.github,npm-shrinkwrap.json,.svelte-kit,.nova"
           output_file: "docs/frontend.svg"
-          should_push: false
+          should_push: true
           root_path: "frontend/"
 
       - name: "📊 visualiser artifacts"
