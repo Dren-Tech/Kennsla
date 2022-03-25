@@ -2,8 +2,8 @@
 <script lang="ts">
 	import { Arrow } from './icons/Icons';
 	import { slide } from 'svelte/transition';
-	export let title: string = 'Title';
-	export let isOpen: boolean = true;
+	export let title = 'Title';
+	export let isOpen = true;
 	let onClick = () => {
 		isOpen = !isOpen;
 	};

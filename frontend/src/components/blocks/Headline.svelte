@@ -1,7 +1,7 @@
 <script lang="ts">
 	type HeadlineType = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 
-	export let text: string = 'Text';
+	export let text = 'Text';
 	export let headlineType: HeadlineType = 'h1';
 </script>
 

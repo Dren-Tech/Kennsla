@@ -7,3 +7,9 @@ node_modules
 .env.*
 !.env.example
 test-results
+
+# Local Netlify folder
+.netlify
+
+# nova editor
+.nova
