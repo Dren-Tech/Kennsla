@@ -37,7 +37,7 @@ jobs:
         uses: githubocto/repo-visualizer@0.7.1
         with:
           excluded_paths: "node_modules,build,.storybook,.netlify,.github,npm-shrinkwrap.json"
-          output_file: "frontend/build/diagram.svg"
+          output_file: "docs/frontend.svg"
           should_push: false
           root_path: "frontend/"
 
@@ -45,7 +45,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: diagram
-          path: frontend/build/diagram.svg
+          path: docs/frontend.svg
       - name: Deploy to Netlify
         env:
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
