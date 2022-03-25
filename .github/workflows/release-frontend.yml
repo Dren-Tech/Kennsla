@@ -1,20 +1,22 @@
-name: Deploy Frontend
+name: Release Frontend
 
 on:
-  workflow_dispatch:
-    inputs:
-      message:
-        required: false
-        description: 'Build description'
-
-  workflow_run:
-    workflows: ["CI Frontend"]
-    type:
-      - complete
+  push:
+    branches:
+      - main
+      - alpha
+      - beta
 
 jobs:
+  test:
+    name: Test Code
+    uses: Dren-Tech/Kennsla/.github/workflows/development-frontend.yml@test
+  check:
+    name: Check Code
+    uses: Dren-Tech/Kennsla/.github/workflows/development-frontend.yml@check
   deployment:
-    if: github.event_name != 'pull_request'
+    name: Deploy Frontend
+    needs: ['test', 'check']
     runs-on: ubuntu-latest
     environment: 
       name: Production
