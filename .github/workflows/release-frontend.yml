@@ -1,0 +1,71 @@
+name: Release Frontend
+
+on:
+  push:
+    branches:
+      - main
+      - alpha
+      - beta
+
+jobs:
+  test:
+    name: Test Code
+    uses: Dren-Tech/Kennsla/.github/workflows/development-frontend.yml@test
+
+  check:
+    name: Check Code
+    uses: Dren-Tech/Kennsla/.github/workflows/development-frontend.yml@check
+    
+  deployment:
+    name: Deploy Frontend
+    needs: ['test', 'check']
+    runs-on: ubuntu-latest
+    environment: 
+      name: Production
+      url: https://kennsla-frontend.netlify.app
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js 16.x
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16.x
+          cache: 'npm'
+      - name: Install dependencies
+        run: npm ci
+        working-directory: frontend
+      - run: npm run build
+        name: Build SvelteKit
+        working-directory: frontend
+      - name: "📊 repository visualizer"
+        id: diagram
+        uses: githubocto/repo-visualizer@0.7.1
+        with:
+          excluded_paths: "node_modules,build,.storybook,.netlify,.github,npm-shrinkwrap.json"
+          output_file: "public/diagram.svg"
+          should_push: false
+
+      - name: "📊 visualiser artifacts"
+        uses: actions/upload-artifact@v2
+        with:
+          name: diagram
+          path: public/diagram.svg
+      - name: Deploy to Netlify
+        env:
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+        run: npm run deploy:prod
+        working-directory: frontend
+
+  cleanup:
+    name: Cleanup actions
+    needs:
+      - deployment
+    runs-on: ubuntu-latest
+    steps:
+      - name: "♻️ remove build artifacts"
+        uses: geekyeggo/delete-artifact@v1
+        with:
+          name: |
+            build
+            docker
+            diagram
