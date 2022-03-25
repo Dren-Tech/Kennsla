@@ -53,14 +53,14 @@ jobs:
         run: npm run deploy:prod
         working-directory: frontend
 
-  cleanup:
-    name: Cleanup actions
-    needs:
-      - deployment
-    runs-on: ubuntu-latest
-    steps:
-      - name: "♻️ remove build artifacts"
-        uses: geekyeggo/delete-artifact@v1
-        with:
-          name: |
-            diagram
+  # cleanup:
+  #   name: Cleanup actions
+  #   needs:
+  #     - deployment
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: "♻️ remove build artifacts"
+  #       uses: geekyeggo/delete-artifact@v1
+  #       with:
+  #         name: |
+  #           diagram
