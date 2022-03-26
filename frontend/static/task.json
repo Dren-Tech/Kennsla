@@ -39,7 +39,7 @@
 			"type": "hint",
 			"payload": {
 				"title": "Hinweis Nr. 1",
-				"text": "Proident amet non Lorem proident ullamco ea proident consequat ea voluptate exercitation."
+				"text": "Hinweis-Text 1."
 			}
 		},
 		{
@@ -47,7 +47,7 @@
 			"type": "hint",
 			"payload": {
 				"title": "Hinweis Nr. 2",
-				"text": "Deserunt incididunt dolor exercitation irure amet. Labore consequat eiusmod sint commodo elit dolor proident ut est ullamco aliqua ad."
+				"text": "Hinweis-Text 2."
 			}
 		}
 	]

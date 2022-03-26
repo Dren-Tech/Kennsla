@@ -4,6 +4,7 @@ import { devices } from '@playwright/test';
 const config = {
 	forbidOnly: !!process.env.CI,
 	retries: process.env.CI ? 2 : 0,
+	testMatch: 'tests/**/*.ts',
 	use: {
 		baseURL: 'http://localhost:3000',
 		screenshot: 'only-on-failure'
