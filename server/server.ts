@@ -1,5 +1,5 @@
 import { Application, Router, Context } from "https://deno.land/x/oak@v10.5.1/mod.ts";
-import JsonResponseMiddleware from "./src/http/middleware/JsonResponseMiddleware.ts";
+import {JsonResponseMiddleware, RequestLoggerMiddleware} from "./src/http/middleware/Middleware.ts";
 
 const router = new Router();
 router.get("/", (ctx: Context) => {
@@ -10,9 +10,10 @@ router.get("/task/{slug}", (ctx: Context) => {
 });
 
 const app = new Application();
+app.use(JsonResponseMiddleware);
+app.use(RequestLoggerMiddleware);
 app.use(router.routes());
 app.use(router.allowedMethods());
-app.use(JsonResponseMiddleware);
 
 app.addEventListener(
   "listen",
