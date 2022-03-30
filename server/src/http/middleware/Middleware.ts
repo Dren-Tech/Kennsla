@@ -1,5 +1,9 @@
-import RequestLoggerMiddleware from './RequestLoggerMiddleware.ts';
-import JsonResponseMiddleware from './JsonResponseMiddleware.ts';
-import RequestTimeMiddleware from './RequestTimeMiddleware.ts';
+import RequestLoggerMiddleware from "./RequestLoggerMiddleware.ts";
+import JsonResponseMiddleware from "./JsonResponseMiddleware.ts";
+import RequestTimeMiddleware from "./RequestTimeMiddleware.ts";
 
-export {RequestLoggerMiddleware, JsonResponseMiddleware, RequestTimeMiddleware};
+export {
+  JsonResponseMiddleware,
+  RequestLoggerMiddleware,
+  RequestTimeMiddleware,
+};

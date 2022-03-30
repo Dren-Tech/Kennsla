@@ -1,12 +1,20 @@
-import { Application, Router, Context } from "https://deno.land/x/oak@v10.5.1/mod.ts";
-import {JsonResponseMiddleware, RequestLoggerMiddleware, RequestTimeMiddleware} from "./src/http/middleware/Middleware.ts";
+import {
+  Application,
+  Context,
+  Router,
+} from "https://deno.land/x/oak@v10.5.1/mod.ts";
+import {
+  JsonResponseMiddleware,
+  RequestLoggerMiddleware,
+  RequestTimeMiddleware,
+} from "./src/http/middleware/Middleware.ts";
 
 const router = new Router();
 router.get("/", (ctx: Context) => {
   ctx.response.body = "Hello world!";
 });
 router.get("/task/{slug}", (ctx: Context) => {
-  ctx.response.body = {"hello": "world"};
+  ctx.response.body = { "hello": "world" };
 });
 
 const app = new Application();
