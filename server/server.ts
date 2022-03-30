@@ -10,8 +10,14 @@ router.get("/task/{slug}", (ctx: Context) => {
 });
 
 const app = new Application();
-app.use(JsonResponseMiddleware);
 app.use(RequestLoggerMiddleware);
+app.use(async (ctx, next) => {
+  const start = Date.now();
+  await next();
+  const ms = Date.now() - start;
+  ctx.response.headers.set("X-Response-Time", `${ms}ms`);
+});
+app.use(JsonResponseMiddleware);
 app.use(router.routes());
 app.use(router.allowedMethods());
 
