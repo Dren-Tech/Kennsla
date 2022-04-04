@@ -20,7 +20,7 @@ jobs:
       matrix:
         os-type: ['windows-latest', 'ubuntu-latest', 'macos-latest']
     name: Deploy Packages
-    needs: ['build']
+    needs: ['test']
     runs-on: ${{ matrix.os-type }}
     steps:
       - uses: actions/checkout@v2
