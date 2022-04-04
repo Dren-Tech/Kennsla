@@ -1,0 +1,67 @@
+name: Release Server
+
+on:
+  push:
+    branches:
+      - main
+      - alpha
+      - beta
+
+env:
+  GO_VERSION: 1.17
+
+jobs:
+  test:
+    name: Test Code
+    uses: Dren-Tech/Kennsla/.github/workflows/development-server.yml@main
+
+  package:
+    strategy:
+      matrix:
+        os-type: ['windows-latest', 'ubuntu-latest', 'macos-latest']
+    name: Deploy Packages
+    needs: ['build']
+    runs-on: ${{ matrix.os-type }}
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: Set up Go
+        uses: actions/setup-go@v3
+        with:
+          go-version: ${{ env.GO_VERSION }}
+
+      - name: Build
+        run: go build -v ./...
+        working-directory: server
+      
+      
+  analyze:
+    name: Analyze Code
+    needs: ['package']
+    runs-on: ubuntu-latest
+    steps:
+      - name: "📊 repository visualizer"
+        id: diagram
+        uses: githubocto/repo-visualizer@0.8.1
+        with:
+          excluded_paths: "node_modules,build,.storybook,.netlify,.github,npm-shrinkwrap.json,.svelte-kit,.nova"
+          output_file: "docs/server.svg"
+          should_push: true
+          root_path: "server/"
+
+      - name: "📊 visualiser artifacts"
+        uses: actions/upload-artifact@v2
+        with:
+          name: diagram
+          path: docs/server.svg
+  # cleanup:
+  #   name: Cleanup actions
+  #   needs:
+  #     - deployment
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: "♻️ remove build artifacts"
+  #       uses: geekyeggo/delete-artifact@v1
+  #       with:
+  #         name: |
+  #           diagram
