@@ -10,8 +10,12 @@ import (
 func main() {
 	e := echo.New()
 
-	// middleware
-	e.Use(middleware.Logger())
+	// MIDDLEWARE
+
+	// log requests
+	e.Use(middleware.LoggerWithConfig(middleware.LoggerConfig{
+		Format: "[${method}] ${uri} (${status}) [${latency_human}]\n",
+	}))
 
 	e.GET("/", func(c echo.Context) error {
 		return c.String(http.StatusOK, "Hello, World!")
