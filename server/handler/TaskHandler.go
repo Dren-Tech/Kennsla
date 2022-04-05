@@ -1,7 +1,6 @@
 package handler
 
 import (
-	"fmt"
 	"net/http"
 	"server/domain/model"
 
@@ -33,9 +32,7 @@ func GetTask(c echo.Context) error {
 	task.ID = 123
 	task.Blocks = []model.Block{}
 
-	task.Blocks = append(task.Blocks, *block)
-
-	fmt.Println(block.GetJsonStringFromPayload())
+	task.AddBlock(*block)
 
 	return c.JSON(http.StatusOK, task)
 }
