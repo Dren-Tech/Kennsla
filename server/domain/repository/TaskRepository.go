@@ -1,8 +1,14 @@
 package repository
 
-import "server/domain/model"
+import (
+	"server/config"
+	"server/domain/model"
+)
 
 func GetTaskBySlug(slug string) model.Task {
+	db := config.CreateDbConnection()
+	db.AutoMigrate(&model.Task{})
+
 	block1 := new(model.Block)
 	block1.ID = 12
 	block1.Type = "question"
@@ -28,13 +34,12 @@ func GetTaskBySlug(slug string) model.Task {
         "text": "Hinweis-Text 1."
     }`)
 
-	task := new(model.Task)
-	task.Slug = slug
-	task.ID = 4
-	task.Blocks = []model.Block{}
+	var task *model.Task
+	db.First(&task, "slug LIKE ?", slug)
 
-	task.AddBlock(*block1)
-	task.AddBlock(*block2)
+	// task.Blocks = []model.Block{}
+	// task.AddBlock(*block1)
+	// task.AddBlock(*block2)
 
 	return *task
 }

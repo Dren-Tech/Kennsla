@@ -1,11 +1,13 @@
 package model
 
+import "gorm.io/gorm"
+
 type Task struct {
-	ID     int     `json:"id"`
-	Slug   string  `json:"slug"`
-	Blocks []Block `json:"blocks"`
+	gorm.Model
+	Slug string `json:"slug"`
+	//Blocks []Block `json:"blocks"`
 }
 
-func (t *Task) AddBlock(block Block) {
-	t.Blocks = append(t.Blocks, block)
-}
+// func (t *Task) AddBlock(block Block) {
+// 	t.Blocks = append(t.Blocks, block)
+// }
