@@ -1,30 +1,31 @@
 package model
 
 import (
-	"encoding/json"
-	"fmt"
+	"gorm.io/datatypes"
+	"gorm.io/gorm"
 )
 
 type Block struct {
-	ID      int                    `json:"id"`
-	Type    string                 `json:"type"`
-	Payload map[string]interface{} `json:"payload"`
+	gorm.Model
+	Type    string         `json:"type"`
+	Payload datatypes.JSON `json:"payload"`
+	TaskID  uint
 }
 
-func (b *Block) ParsePayloadFromJsonString(payloadString string) {
-	var result map[string]interface{}
+// func (b *Block) ParsePayloadFromJsonString(payloadString string) {
+// 	var result map[string]interface{}
 
-	json.Unmarshal([]byte(payloadString), &result)
+// 	json.Unmarshal([]byte(payloadString), &result)
 
-	b.Payload = result
-}
+// 	b.Payload = result
+// }
 
-func (b Block) GetJsonStringFromPayload() string {
-	str, err := json.Marshal(b.Payload)
+// func (b Block) GetJsonStringFromPayload() string {
+// 	str, err := json.Marshal(b.Payload)
 
-	if err != nil {
-		fmt.Println(err)
-	}
+// 	if err != nil {
+// 		fmt.Println(err)
+// 	}
 
-	return string(str)
-}
+// 	return string(str)
+// }
