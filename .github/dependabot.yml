@@ -15,6 +15,22 @@ updates:
     commit-message:
       prefix: fix
       prefix-development: chore
+      
+  - package-ecosystem: gomod
+    directory: "/server"
+    schedule:
+      interval: daily
+    open-pull-requests-limit: 10
+    assignees:
+      - rotespferd
+    labels:
+      - dependencies
+    versioning-strategy: increase
+    allow:
+      - dependency-type: direct
+    commit-message:
+      prefix: fix
+      prefix-development: chore
 
   - package-ecosystem: "github-actions"
     directory: "/"
