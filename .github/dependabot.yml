@@ -25,7 +25,6 @@ updates:
       - rotespferd
     labels:
       - dependencies
-    versioning-strategy: increase
     allow:
       - dependency-type: direct
     commit-message:
