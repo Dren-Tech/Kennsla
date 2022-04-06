@@ -1,6 +1,8 @@
 package handler
 
 import (
+	"encoding/json"
+	"fmt"
 	"net/http"
 	"server/domain/model"
 	"server/domain/repository"
@@ -17,6 +19,16 @@ func GetTask(c echo.Context) error {
 }
 
 func CreateTask(c echo.Context) error {
-	result := repository.CreateNewTask(model.Task{})
+	var task model.Task
+
+	decoder := json.NewDecoder(c.Request().Body)
+	decoder.DisallowUnknownFields()
+	err := decoder.Decode(&task)
+
+	if err != nil {
+		panic(fmt.Errorf("fatal error: %w", err))
+	}
+
+	result := repository.CreateNewTask(task)
 	return c.JSON(http.StatusOK, SaveEntityResult{ID: result, Status: "OK"})
 }

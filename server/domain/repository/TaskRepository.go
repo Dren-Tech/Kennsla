@@ -6,7 +6,11 @@ import (
 )
 
 func CreateNewTask(task model.Task) uint {
-	return 1337
+	db := config.CreateDbConnection()
+
+	db.Create(&task)
+
+	return task.ID
 }
 
 func GetTaskBySlug(slug string) model.Task {
