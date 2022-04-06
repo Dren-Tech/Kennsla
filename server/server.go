@@ -35,6 +35,7 @@ func main() {
 
 	// task handlers
 	e.GET("/task/:slug", handler.GetTask)
+	e.POST("/task", handler.CreateTask)
 
 	e.Logger.Fatal(e.Start(":1323"))
 }

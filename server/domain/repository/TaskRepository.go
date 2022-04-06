@@ -5,6 +5,10 @@ import (
 	"server/domain/model"
 )
 
+func CreateNewTask(task model.Task) uint {
+	return 1337
+}
+
 func GetTaskBySlug(slug string) model.Task {
 	db := config.CreateDbConnection()
 	db.AutoMigrate(&model.Task{})
