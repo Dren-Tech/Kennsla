@@ -29,6 +29,10 @@ func CreateTask(c echo.Context) error {
 		panic(fmt.Errorf("fatal error: %w", err))
 	}
 
+	if task.Slug == "" {
+		task.Slug = task.SluggifyTitle()
+	}
+
 	result := repository.CreateNewTask(task)
 	return c.JSON(http.StatusOK, SaveEntityResult{ID: result, Status: "OK"})
 }
