@@ -19,11 +19,7 @@ func GetTaskBySlug(slug string) model.Task {
 	db.AutoMigrate(&model.Block{})
 
 	var task *model.Task
-	db.First(&task, "slug LIKE ?", slug)
-
-	// task.Blocks = []model.Block{}
-	// task.AddBlock(*block1)
-	// task.AddBlock(*block2)
+	db.Preload("Blocks").First(&task, "slug LIKE ?", slug)
 
 	return *task
 }

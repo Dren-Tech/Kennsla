@@ -21,10 +21,10 @@ func GetTask(c echo.Context) error {
 func CreateTask(c echo.Context) error {
 	var task model.Task
 
+	// get json from body and decode it into task
 	decoder := json.NewDecoder(c.Request().Body)
 	decoder.DisallowUnknownFields()
 	err := decoder.Decode(&task)
-
 	if err != nil {
 		panic(fmt.Errorf("fatal error: %w", err))
 	}
