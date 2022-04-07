@@ -34,5 +34,5 @@ jobs:
       working-directory: server
 
     - name: Test
-      run: go test -v ./...
+      run: go test -v ./test/...
       working-directory: server
