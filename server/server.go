@@ -3,8 +3,10 @@ package main
 import (
 	"fmt"
 	"net/http"
+	"server/config"
 	"server/handler"
 
+	"github.com/eko/gocache/store"
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
 	"github.com/spf13/viper"
@@ -19,6 +21,10 @@ func main() {
 	if err != nil {             // Handle errors reading the config file
 		panic(fmt.Errorf("fatal error config file: %w", err))
 	}
+
+	// init caches
+	cache := config.GetCache()
+	cache.Set("cache_health", true, &store.Options{})
 
 	e := echo.New()
 
