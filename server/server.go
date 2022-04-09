@@ -2,13 +2,11 @@ package main
 
 import (
 	"fmt"
-	"net/http"
+	"os"
+	"server/command"
 	"server/config"
-	"server/handler"
 
 	"github.com/eko/gocache/store"
-	"github.com/labstack/echo/v4"
-	"github.com/labstack/echo/v4/middleware"
 	"github.com/spf13/viper"
 )
 
@@ -26,22 +24,22 @@ func main() {
 	cache := config.GetCache()
 	cache.Set("cache_health", true, &store.Options{})
 
-	e := echo.New()
+	// work on cli arguments
+	cli_arguments := os.Args[1:]
 
-	// MIDDLEWARE
+	var commandName string
+	if len(cli_arguments) >= 1 {
+		commandName = cli_arguments[0]
+	} else {
+		commandName = "start"
+	}
 
-	// log requests
-	e.Use(middleware.LoggerWithConfig(middleware.LoggerConfig{
-		Format: "[${method}] ${uri} (${status}) [${latency_human}]\n",
-	}))
-
-	e.GET("/", func(c echo.Context) error {
-		return c.String(http.StatusOK, "Hello, World!")
-	})
-
-	// task handlers
-	e.GET("/task/:slug", handler.GetTask)
-	e.POST("/task", handler.CreateTask)
-
-	e.Logger.Fatal(e.Start(":1323"))
+	switch commandName {
+	case "start":
+		command.StartServer()
+	case "migrate":
+		command.Migrate()
+	default:
+		command.StartServer()
+	}
 }
