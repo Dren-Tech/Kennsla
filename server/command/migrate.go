@@ -13,6 +13,7 @@ func Migrate() {
 
 	db.AutoMigrate(&model.Block{})
 	db.AutoMigrate(&model.Task{})
+	db.AutoMigrate(&model.ApiKey{})
 
 	fmt.Println("Finished migration")
 }
