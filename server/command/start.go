@@ -2,7 +2,7 @@ package command
 
 import (
 	"net/http"
-	"server/handler"
+	"server/http/handler"
 
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
