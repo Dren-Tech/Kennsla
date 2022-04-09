@@ -6,7 +6,7 @@ import (
 	"gorm.io/gorm"
 )
 
-const API_KEY_LENGTH = 12
+const API_KEY_LENGTH = 24
 
 type ApiKey struct {
 	gorm.Model

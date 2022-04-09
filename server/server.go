@@ -39,6 +39,8 @@ func main() {
 		command.StartServer()
 	case "migrate":
 		command.Migrate()
+	case "generate-key":
+		command.GenerateNewApiKey()
 	default:
 		command.StartServer()
 	}
