@@ -1,3 +1,14 @@
 [database]
 type = "postgres"
 dsn = "user=gorm password=gorm dbname=gorm port=9920 sslmode=disable TimeZone=Asia/Shanghai"
+
+[cache]
+[cache.redis]
+host = "127.0.0.1"
+port = "6379"
+expiration_time = 120   # in seconds
+
+[cache.memcache]
+host = "127.0.0.1"
+port = "11211"
+expiration_time = 120   # in seconds

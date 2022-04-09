@@ -1,9 +1,15 @@
 package repository
 
 import (
+	"fmt"
 	"server/config"
 	"server/domain/model"
+
+	"github.com/eko/gocache/cache"
+	"github.com/eko/gocache/store"
 )
+
+var c *cache.ChainCache = config.GetCache()
 
 func CreateNewTask(task model.Task) uint {
 	db := config.CreateDbConnection()
@@ -15,11 +21,16 @@ func CreateNewTask(task model.Task) uint {
 
 func GetTaskBySlug(slug string) model.Task {
 	db := config.CreateDbConnection()
-	db.AutoMigrate(&model.Task{})
-	db.AutoMigrate(&model.Block{})
 
 	var task *model.Task
-	db.Preload("Blocks").First(&task, "slug LIKE ?", slug)
+
+	cacheResult, _ := c.Get(fmt.Sprintf("task_slug_%s", slug))
+	if cacheResult == nil {
+		db.Preload("Blocks").First(&task, "slug LIKE ?", slug)
+		c.Set(fmt.Sprintf("task_slug_%s", slug), task, &store.Options{})
+	} else {
+		task = cacheResult.(*model.Task)
+	}
 
 	return *task
 }
