@@ -1,8 +1,12 @@
 import { test, expect } from '@playwright/test';
 
+test.beforeAll(async ({playwright}) => {
+	// send api call to create task
+})
+
 test('Task: Accordion show content on click', async ({ page }) => {
 	// Go to http://localhost:3000/task/test
-	await page.goto('http://localhost:3000/task/test');
+	await page.goto('http://localhost:1323/task/test');
 
 	expect(await page.textContent('.block.hint')).not.toContain('Hinweis-Text 1.');
 	expect(await page.textContent('.block.hint')).not.toContain('Hinweis-Text 2.');
