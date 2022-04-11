@@ -15,6 +15,16 @@ jobs:
     name: Test Code
     uses: Dren-Tech/Kennsla/.github/workflows/development-server.yml@main
 
+  docker:
+    name: Build Docker image
+    needs: ['test']
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build Docker image
+        run: echo "docker build"
+        working-directory: server
+
   package:
     strategy:
       matrix:
@@ -43,7 +53,7 @@ jobs:
       
   analyze:
     name: Analyze Code
-    needs: ['package']
+    needs: ['package', 'docker']
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
