@@ -7,7 +7,10 @@ const config = {
 	testMatch: 'tests/**/*.ts',
 	use: {
 		baseURL: 'http://localhost:3000',
-		screenshot: 'only-on-failure'
+		screenshot: 'only-on-failure',
+		extraHTTPHeaders: {
+			'Authorization': 'token TEST'
+		}
 	},
 	webServer: {
 		command: 'npm run build && npm run preview',
