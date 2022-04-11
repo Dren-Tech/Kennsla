@@ -45,7 +45,7 @@ jobs:
         working-directory: server
 
       - name: "Upload binary"
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: kennsla-server-${{ matrix.os-type }}
           path: server/server
@@ -67,7 +67,7 @@ jobs:
           root_path: "server/"
 
       - name: "📊 visualiser artifacts"
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: diagram
           path: docs/server.svg
