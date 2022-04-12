@@ -12,7 +12,7 @@ const config = {
 		baseURL: 'http://localhost:3000',
 		screenshot: 'only-on-failure',
 		extraHTTPHeaders: {
-			'Authorization': 'bearer TEST'
+			Authorization: 'bearer TEST'
 		}
 	},
 	webServer: {
