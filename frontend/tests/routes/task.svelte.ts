@@ -23,7 +23,9 @@ test.beforeAll(async ({ request }) => {
 			]
 		}
 	});
-	console.log(await response.body());
+	const body = await response.json();
+
+	console.log(body);
 	expect(response.ok()).toBeTruthy();
 });
 
