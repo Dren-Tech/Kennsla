@@ -22,7 +22,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Use Node.js 16.x
-        uses: actions/setup-node@v3.1.0
+        uses: actions/setup-node@v3.1.1
         with:
           node-version: 16.x
           cache: 'npm'
@@ -34,7 +34,7 @@ jobs:
         working-directory: frontend
       - name: "📊 repository visualizer"
         id: diagram
-        uses: githubocto/repo-visualizer@0.8.1
+        uses: githubocto/repo-visualizer@0.8.2
         with:
           excluded_paths: "node_modules,build,.storybook,.netlify,.github,npm-shrinkwrap.json,.svelte-kit,.nova"
           output_file: "docs/frontend.svg"
@@ -42,7 +42,7 @@ jobs:
           root_path: "frontend/"
 
       - name: "📊 visualiser artifacts"
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: diagram
           path: docs/frontend.svg

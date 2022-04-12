@@ -15,6 +15,16 @@ jobs:
     name: Test Code
     uses: Dren-Tech/Kennsla/.github/workflows/development-server.yml@main
 
+  docker:
+    name: Build Docker image
+    needs: ['test']
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build Docker image
+        run: echo "docker build"
+        working-directory: server
+
   package:
     strategy:
       matrix:
@@ -35,7 +45,7 @@ jobs:
         working-directory: server
 
       - name: "Upload binary"
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: kennsla-server-${{ matrix.os-type }}
           path: server/server
@@ -43,13 +53,13 @@ jobs:
       
   analyze:
     name: Analyze Code
-    needs: ['package']
+    needs: ['package', 'docker']
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: "📊 repository visualizer"
         id: diagram
-        uses: githubocto/repo-visualizer@0.8.1
+        uses: githubocto/repo-visualizer@0.8.2
         with:
           excluded_paths: "node_modules,build,.storybook,.netlify,.github,npm-shrinkwrap.json,.svelte-kit,.nova"
           output_file: "docs/server.svg"
@@ -57,7 +67,7 @@ jobs:
           root_path: "server/"
 
       - name: "📊 visualiser artifacts"
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: diagram
           path: docs/server.svg
