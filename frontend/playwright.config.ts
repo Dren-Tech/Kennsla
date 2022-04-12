@@ -1,4 +1,7 @@
 import { devices } from '@playwright/test';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 /** @type {import('@playwright/test').PlaywrightTestConfig} */
 const config = {
@@ -9,7 +12,7 @@ const config = {
 		baseURL: 'http://localhost:3000',
 		screenshot: 'only-on-failure',
 		extraHTTPHeaders: {
-			'Authorization': 'token TEST'
+			'Authorization': 'bearer TEST'
 		}
 	},
 	webServer: {

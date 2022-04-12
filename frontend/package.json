@@ -38,6 +38,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"dotenv": "^16.0.0",
 		"markdown-it": "^12.3.2"
 	}
 }

@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 test.beforeAll(async ({ request }) => {
   // Create a new repository
-  const response = await request.post('http://localhost:1323/task', {
+  const response = await request.post(`${process.env["VITE_API_URL"]}/task`, {
     data: {
 	"slug": "test",
 	"blocks": [
@@ -22,7 +22,6 @@ test.beforeAll(async ({ request }) => {
 		}
 	]
 }
-
   });
   expect(response.ok()).toBeTruthy();
 });
