@@ -59,7 +59,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: "📊 repository visualizer"
         id: diagram
-        uses: githubocto/repo-visualizer@0.8.1
+        uses: githubocto/repo-visualizer@0.8.2
         with:
           excluded_paths: "node_modules,build,.storybook,.netlify,.github,npm-shrinkwrap.json,.svelte-kit,.nova"
           output_file: "docs/server.svg"
