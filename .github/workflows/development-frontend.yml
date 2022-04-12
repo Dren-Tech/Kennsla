@@ -93,7 +93,7 @@ jobs:
         cache: 'npm'
     
     - name: Build the docker-compose stack
-      run: cp config_dist.toml ../server/config.toml && docker-compose build
+      run: cp config_dist.toml ../server/config.toml && cp config_dist.toml config.toml && docker-compose build
       working-directory: frontend
     - name: Run migration in docker-compose
       run: docker-compose run api ./server migrate
