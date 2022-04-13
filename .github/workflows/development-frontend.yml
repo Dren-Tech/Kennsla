@@ -96,7 +96,7 @@ jobs:
       run: cp config_dist.toml ../server/config.toml && cp config_dist.toml config.toml && docker-compose build
       working-directory: frontend
     - name: Run migration in docker-compose
-      run: docker-compose up db && docker-compose ps && docker-compose run api ./server migrate
+      run: docker-compose up -d db && docker-compose ps && docker-compose run api ./server migrate
       working-directory: frontend
     - name: Run docker-compose
       run: docker-compose up -d
