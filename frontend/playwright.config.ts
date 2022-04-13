@@ -1,4 +1,7 @@
 import { devices } from '@playwright/test';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 /** @type {import('@playwright/test').PlaywrightTestConfig} */
 const config = {
@@ -7,7 +10,10 @@ const config = {
 	testMatch: 'tests/**/*.ts',
 	use: {
 		baseURL: 'http://localhost:3000',
-		screenshot: 'only-on-failure'
+		screenshot: 'only-on-failure',
+		extraHTTPHeaders: {
+			Authorization: 'bearer TEST'
+		}
 	},
 	webServer: {
 		command: 'npm run build && npm run preview',

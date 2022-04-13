@@ -1,5 +1,31 @@
 import { test, expect } from '@playwright/test';
 
+test.beforeAll(async ({ request }) => {
+	// Create a new repository
+	const response = await request.post(`${process.env['VITE_API_URL']}/task`, {
+		data: {
+			slug: 'test',
+			blocks: [
+				{
+					type: 'hint',
+					payload: {
+						title: 'Hinweis Nr. 1',
+						text: 'Hinweis-Text 1.'
+					}
+				},
+				{
+					type: 'hint',
+					payload: {
+						title: 'Hinweis Nr. 2',
+						text: 'Hinweis-Text 2.'
+					}
+				}
+			]
+		}
+	});
+	expect(response.ok()).toBeTruthy();
+});
+
 test('Task: Accordion show content on click', async ({ page }) => {
 	// Go to http://localhost:3000/task/test
 	await page.goto('http://localhost:3000/task/test');

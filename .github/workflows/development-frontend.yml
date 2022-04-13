@@ -79,6 +79,10 @@ jobs:
       matrix:
         node-version: [16.x, 17.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+
+    env:
+      VITE_API_URL: http://localhost:1323
+      VITE_API_KEY: AAAAAAAAAAAAAAAA
     
     steps:
     - uses: actions/checkout@v2
@@ -87,15 +91,28 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+    
+    - name: Build the docker-compose stack
+      run: cp config_dist.toml ../server/config.toml && cp config_dist.toml config.toml && docker-compose build
+      working-directory: frontend
+    - name: Run migration in docker-compose
+      run: docker-compose up -d db && docker-compose run api ./server migrate
+      working-directory: frontend
+    - name: Run docker-compose
+      run: docker-compose up -d
+      working-directory: frontend
+
     - name: Install dependencies
       run: npm ci
       working-directory: frontend
     - name: Install Playwright
       run: npx playwright install --with-deps
       working-directory: frontend
+    
     - name: Run your tests
       run: npm test
       working-directory: frontend
+    
     - name: Upload test results
       if: always()
       uses: actions/upload-artifact@v3

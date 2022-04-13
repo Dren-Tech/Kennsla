@@ -1,0 +1,19 @@
+version: '3.1'
+services:
+  db:
+    extends:
+      file: ../server/docker-compose.yml
+      service: db
+  api:
+    build: ../server
+    command: ./server start
+    environment:
+      - APP_ENV=dev
+    volumes:
+      - ./config.toml:/app/config.toml
+    ports:
+      - 1323:1323
+    links:
+      - db
+    depends_on:
+      - db
