@@ -13,7 +13,7 @@ jobs:
       pull-requests: write
 
     steps:
-    - uses: actions/stale@v5
+    - uses: actions/stale@v6
       with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
         stale-pr-message: "This PR hasn't seen activity in a week! Should it be merged, closed, or worked on further? If you want to keep it open, post a comment or remove the `stale` label – otherwise this will be closed in another week."
