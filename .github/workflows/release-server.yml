@@ -20,7 +20,7 @@ jobs:
     needs: ['test']
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3.1.0
       - name: Build Docker image
         run: echo "docker build"
         working-directory: server
@@ -33,7 +33,7 @@ jobs:
     needs: ['test']
     runs-on: ${{ matrix.os-type }}
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3.1.0
       
       - name: Set up Go
         uses: actions/setup-go@v3
@@ -56,7 +56,7 @@ jobs:
     needs: ['package', 'docker']
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3.1.0
       - name: "📊 repository visualizer"
         id: diagram
         uses: githubocto/repo-visualizer@0.8.2
