@@ -42,7 +42,7 @@ jobs:
           root_path: "frontend/"
 
       - name: "📊 visualiser artifacts"
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v5
         with:
           name: diagram
           path: docs/frontend.svg
